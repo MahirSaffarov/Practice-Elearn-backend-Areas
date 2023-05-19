@@ -1,0 +1,48 @@
+﻿@model NewsDetailVM
+@{
+    ViewData["Title"] = "Detail";
+}
+<style>
+    .detail-view {
+        display: flex;
+        align-items: center;
+    }
+
+    .image {
+        width: 400px;
+        margin-right: 20px;
+    }
+
+        .image img {
+            max-width: 100%;
+        }
+
+    .info {
+        flex-grow: 1;
+    }
+
+        .info h2 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .info p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+</style>
+<div class="detail-view">
+    <div class="image">
+        <img src="~/images/@Model.Image" alt="">
+    </div>
+    <div class="info">
+        <h2>@Model.Title</h2>
+        <p>@Model.Author</p>
+        <p>@Model.Date</p>
+        <a asp-controller="News" asp-action="Index" class="btn btn-danger">Back</a>
+    </div>
+
+</div>
+
+
